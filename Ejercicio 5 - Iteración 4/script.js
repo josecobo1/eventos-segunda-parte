@@ -33,6 +33,7 @@ const calculation = (value_1, value_2, operation) => {
     return res;
 }
 
+// esta funcion reemplaza la coma de los decimales por un punto (.)
 const replaceComa = str => {
     return str.replace(",", ".");
 }
@@ -42,11 +43,7 @@ const replaceComa = str => {
 // si no son numeros muestra un aviso y si son numeros pasa los valores
 // y la operación seleccionada a la función reponsable de realizar el calculo
 const validation = () => {
-    let value_1 = replaceComa(numberOne.value);
-    let value_2 = replaceComa(numberTwo.value);
-    console.log("Valor1: " + isNaN(value_1));
-    console.log("Valor2: " + isNaN(value_2));
-    isNaN(value_1) || isNaN(value_2) ? alert("Uno de los valores no es un numero") : result.setAttribute("value", calculation(parseFloat(value_1), parseFloat(value_2), document.getElementById("operations").value));
+    isNaN(replaceComa(numberOne.value)) || isNaN(replaceComa(numberTwo.value)) ? alert("Uno de los valores no es un numero") : result.setAttribute("value", calculation(parseFloat(replaceComa(numberOne.value)), parseFloat(replaceComa(numberTwo.value)), document.getElementById("operations").value));
 }
 
 // EventListener que al clicar en el boton realiza los calculos
