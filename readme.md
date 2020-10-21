@@ -115,15 +115,3 @@ Añade un callback al evento `window.onload` que haga lo siguiente:
 - Establecer los límites del movimiento para que no se salga de la pantalla.
 - Asignar los valores `x` e `y` a las propiedades `left` y `top`, respectivamente del sprite.
 
-## Bonus Track
-
-Queremos generar un carrousel de imágenes para una lista de elementos.
-
-A partir del código en
-https://www.dropbox.com/s/tuko4ndlrxg2lef/carrousel.zip?dl=0
-
-Cada elemento de la lista tiene asociados un número de imágenes almacenadas en un array (cada botón tiene un código asociado).
-Evoluciona el código para que:
-Muestre la primera imagen del array en la modal, usando el elemento main_image (ya en el código)
-Al pulsar la tecla  o , avance cada imagen
-Asimismo, cuando pulsemos ESC, cierre la modal
