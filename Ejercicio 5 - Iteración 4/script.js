@@ -17,16 +17,16 @@ const calculation = (value_1, value_2, operation) => {
     console.log("Valor2: "+ value_2);
     switch(operation) {
         case "+":
-            return  value_1 + value_2;
+            return  eval(value_1 + value_2);
             break;
         case "-":
-            return  value_1 - value_2;
+            return  eval(value_1 - value_2);
             break
         case "*":
-            return  value_1 * value_2;
+            return  eval(value_1 * value_2);
             break;
         case "/":
-            return  value_1 / value_2;
+            return  eval(value_1 / value_2);
             break;
     }
 
