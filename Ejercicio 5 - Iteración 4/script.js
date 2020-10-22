@@ -30,7 +30,7 @@ const calculation = (value_1, value_2, operation) => {
             break;
     }
 
-    return res;
+    
 }
 
 // esta funcion reemplaza la coma de los decimales por un punto (.)

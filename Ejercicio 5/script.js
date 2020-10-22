@@ -29,7 +29,6 @@ const calculation = (value_1, value_2, operation) => {
             break;
     }
 
-    return res;
 }
 
 
