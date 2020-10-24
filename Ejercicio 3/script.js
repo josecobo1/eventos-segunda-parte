@@ -9,7 +9,7 @@ const random = () => {
     return Math.floor(Math.random() * lista.length);
 }
 
-// Falta poder leer las proiedades del bton clicado
+// Juego que comprueba si boton clicado es el correcto
 const playGame = (event) => {
 
     if(victory){
