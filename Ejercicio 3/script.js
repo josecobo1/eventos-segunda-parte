@@ -90,7 +90,3 @@ const randomWord = () => {
 // Ejecutamos la función correspondiente que escoge
 // la palabra e inicia todo el proceso
 randomWord();
-
-
-
-
