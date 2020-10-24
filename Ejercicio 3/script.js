@@ -25,7 +25,7 @@ const playGame = (event) => {
         alert(`Has fallado, ya no te quedan intentos`);
     }
     // Si no has ganado y te quedan vidas pero no clicas en el boton correcto, te avisa del error y te muestra las vidas que te quedan; restamos una vida al contador
-    else if (lifes >= 1 && event.target.name!="win") {
+    else if (lifes > 1 && event.target.name!="win") {
         lifes -= 1;
         alert(`Has fallado, te quedan ${lifes} intentos`);
     }
