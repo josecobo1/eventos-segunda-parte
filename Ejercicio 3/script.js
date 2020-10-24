@@ -1,9 +1,39 @@
 // Lista con todas las palabras posibles
 const lista = ['Lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur'];
 
+let lifes = 3; // Contador de vidas
+let victory = false; // flag para saber si el jugaador ya ha ganado
+
 // Selecciona un numero para escoger la palabra aleatoria de la lista
 const random = () => {
     return Math.floor(Math.random() * lista.length);
+}
+
+// Falta poder leer las proiedades del bton clicado
+const playGame = (event) => {
+
+    if(victory){
+        alert(`Ya has ganado, que mas quieres?`);
+    }
+    // Si no has ganado pero te quedan vidas y clicas en el boton correcto cambia el estado de victory y finaliza el juego
+    else if (lifes >= 1 && event.target.name==="win") {
+        victory = true;
+        alert(`Enhorabuena has ganado!`)
+    }
+    else if (lifes === 1 && event.target.name!="win") {
+        lifes -= 1;
+        alert(`Has fallado, ya no te quedan intentos`);
+    }
+    // Si no has ganado y te quedan vidas pero no clicas en el boton correcto, te avisa del error y te muestra las vidas que te quedan; restamos una vida al contador
+    else if (lifes >= 1 && event.target.name!="win") {
+        lifes -= 1;
+        alert(`Has fallado, te quedan ${lifes} intentos`);
+    }
+    // Si no te quedan vidas no te deja jugar mas
+    else if(lifes === 0 ) {
+        alert(`No te quedan vidas para jugar`);
+    }
+
 }
 
 // Pinta el enunciado en la panrtalla
@@ -32,6 +62,7 @@ const newButton = (where, type, value, r) => {
     else {
         element.setAttribute("name", "lose");
     }
+    element.addEventListener('click', playGame);
     position.appendChild(element); // pintamos el boton por pantalla 
 }
 
@@ -61,31 +92,5 @@ const randomWord = () => {
 randomWord();
 
 
-let lifes = 3; // Contador de vidas
-let victory = false; // flag para saber si el jugaador ya ha ganado
 
-// Listener que escucha a todos los botones creados mas arriba
-cuerpo.addEventListener('click', (event) => {
 
-    // Si victory===true te muestra aviso de que ya has ganado
-  if(victory){
-      alert(`Ya has ganado, que mas quieres?`);
-  }
-  // Si no has ganado pero te quedan vidas y clicas en el boton correcto cambia el estado de victory y finaliza el juego
-  else if (lifes >= 1 && event.target.name==="win") {
-      victory = true;
-      alert(`Enhorabuena has ganado!`)
-  }
-  // Si no has ganado y te quedan vidas pero no clicas en el boton correcto, te avisa del error y te muestra las vidas que te quedan; restamos una vida al contador
-  else if (lifes >= 1 && event.target.name!="win") {
-      lifes -= 1;
-      alert(`Has fallado, te quedan ${lifes} intentos`);
-  }
-  // Si no te quedan vidas no te deja jugar mas
-  else if(lifes === 0 ) {
-      alert(`No te quedan vidas para jugar`);
-  }
-
-  return;
-
-}) 
